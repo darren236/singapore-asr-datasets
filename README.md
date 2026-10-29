@@ -25,7 +25,7 @@ AppTek offers the clearest combination of public test files, stated dataset lice
 
 Start with the speech setting you want to understand. These groups describe the main use of each source; a dataset may contain more than one style.
 
-![Dataset categories: read speech and names, conversation, code-switching, and languages and styles](assets/dataset-map.svg?palette=dark)
+![Dataset categories: read speech and names, conversation, code-switching, and languages and styles](assets/dataset-map-night.svg)
 
 The map describes content, not transcript reliability. For example, YCSEP contains natural speech but its automatic transcripts are unsuitable as an unchecked WER reference.
 
@@ -46,7 +46,7 @@ AppTek record: `en_SG_Agriculture_1586768_channel1.wav`. Excerpts are attributed
 
 Several releases reuse source material. Arrows below mean “supplies material to,” not “every test recording overlaps.” Exact overlap between MNSC Part 3 and SASRBench is not established.
 
-![Selected source families feeding derived ASR datasets](assets/source-reuse.svg?palette=dark)
+![Selected source families feeding derived ASR datasets](assets/source-reuse-night.svg)
 
 This is a selected relationship map, not the complete source list for either aggregate. Adding the hours of parent and derived releases would double-count material. AppTek and GigaSpeechBench have separately described collection processes; that alone does not establish exclusion from a particular model's training data.
 
