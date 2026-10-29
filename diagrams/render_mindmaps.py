@@ -32,8 +32,8 @@ def render_group(group):
     left = group["side"] == "left"
     color = COLORS[group["color"]]
     cy = group["y"]
-    cat_x = 270 if left else 750
-    cat_end = 455 if left else 930
+    cat_x = 270 if left else 735
+    cat_end = 455 if left else 945
     leaf_dot = 224 if left else 976
     leaf_text = 205 if left else 995
     root_edge = 500 if left else 700
@@ -75,7 +75,7 @@ def render_group(group):
 
     label = group["label"]
     label_y = cy - 15 if len(label) == 1 else cy - 26
-    result.append(line_text(cat_x if left else cat_x, label_y, label, size=21, weight=700, fill=color))
+    result.append(line_text(cat_x, label_y, label, size=21, weight=700, fill=color))
     result.append(
         f'<path d="M {cat_x} {cy + 17} H {cat_end}" '
         f'stroke="{color}" stroke-width="4" stroke-linecap="round"/>'
@@ -124,7 +124,7 @@ render(
          "leaves": ["MNSC Part 4", "SEAME", "ASCEND", "CS-Dialogue"],
          "leaf_y": [65, 120, 175, 230]},
         {"side": "right", "position": "bottom", "color": "purple", "y": 570,
-         "label": ["REGIONAL & STYLES"],
+         "label": ["LANGUAGES", "AND STYLES"],
          "leaves": ["MNSC Parts 5–6", "SEA-SpeechBench", "FLEURS", "ESD"],
          "leaf_y": [470, 525, 580, 635]},
     ],
