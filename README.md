@@ -25,13 +25,7 @@ AppTek offers the clearest combination of public test files, stated dataset lice
 
 Start with the speech setting you want to understand. These groups describe the main use of each source; a dataset may contain more than one style.
 
-```mermaid
-flowchart LR
-    B[Read speech and names] --> B1["MNSC Parts 1–2 · Common Voice<br/>SG Streets · IMDA2RareWord"]
-    C[Conversation] --> C1["Spontaneous: MNSC Part 3 · SASRBench<br/>Role-play: AppTek en-SG<br/>Web speech: GigaSpeechBench · YCSEP"]
-    D[Code-switching] --> D1["Singapore / Malaysia: MNSC Part 4 · SEAME<br/>Hong Kong / mainland China: ASCEND · CS-Dialogue"]
-    E[Languages and styles] --> E1["Regional: SEA-SpeechBench · FLEURS<br/>Styles / scenarios: MNSC Parts 5–6 · ESD"]
-```
+![Dataset categories: read speech and names, conversation, code-switching, and languages and styles](assets/dataset-map.svg)
 
 The map describes content, not transcript reliability. For example, YCSEP contains natural speech but its automatic transcripts are unsuitable as an unchecked WER reference.
 

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="344" viewBox="0 0 840 344" role="img" aria-labelledby="title desc">
+<title id="title">Datasets grouped by speech setting</title><desc id="desc">Four categories: read speech and names, conversation, code-switching, and languages and styles. Dataset names appear beside each category.</desc>
+<rect width="840" height="344" rx="12" fill="#f6f8fa"/>
+<rect x="12" y="12" width="208" height="68" rx="8" fill="#dbeafe"/>
+<text x="24" y="51" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#153e75">Read speech and names</text>
+<path d="M226 46 H250 l-6 -5 m6 5 l-6 5" fill="none" stroke="#64748b" stroke-width="2"/>
+<rect x="260" y="12" width="568" height="68" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="274" y="39" font-family="Arial, sans-serif" font-size="16" fill="#172b4d">MNSC Parts 1–2 · Common Voice</text>
+<text x="274" y="62" font-family="Arial, sans-serif" font-size="16" fill="#172b4d">SG Streets · IMDA2RareWord</text>
+<rect x="12" y="92" width="208" height="68" rx="8" fill="#dbeafe"/>
+<text x="24" y="131" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#153e75">Conversation</text>
+<path d="M226 126 H250 l-6 -5 m6 5 l-6 5" fill="none" stroke="#64748b" stroke-width="2"/>
+<rect x="260" y="92" width="568" height="68" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="274" y="119" font-family="Arial, sans-serif" font-size="16" fill="#172b4d">Spontaneous: MNSC Part 3 · SASRBench</text>
+<text x="274" y="142" font-family="Arial, sans-serif" font-size="16" fill="#172b4d">Role-play: AppTek en-SG · Web: GigaSpeechBench / YCSEP</text>
+<rect x="12" y="172" width="208" height="68" rx="8" fill="#dbeafe"/>
+<text x="24" y="211" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#153e75">Code-switching</text>
+<path d="M226 206 H250 l-6 -5 m6 5 l-6 5" fill="none" stroke="#64748b" stroke-width="2"/>
+<rect x="260" y="172" width="568" height="68" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="274" y="199" font-family="Arial, sans-serif" font-size="16" fill="#172b4d">Singapore / Malaysia: MNSC Part 4 · SEAME</text>
+<text x="274" y="222" font-family="Arial, sans-serif" font-size="16" fill="#172b4d">Hong Kong / mainland China: ASCEND · CS-Dialogue</text>
+<rect x="12" y="252" width="208" height="68" rx="8" fill="#dbeafe"/>
+<text x="24" y="291" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#153e75">Languages and styles</text>
+<path d="M226 286 H250 l-6 -5 m6 5 l-6 5" fill="none" stroke="#64748b" stroke-width="2"/>
+<rect x="260" y="252" width="568" height="68" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="274" y="279" font-family="Arial, sans-serif" font-size="16" fill="#172b4d">Regional: SEA-SpeechBench · FLEURS</text>
+<text x="274" y="302" font-family="Arial, sans-serif" font-size="16" fill="#172b4d">Styles and scenarios: MNSC Parts 5–6 · ESD</text>
+</svg>
