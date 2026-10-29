@@ -2,40 +2,51 @@
 
 Speech recognition datasets differ in setting, speakers, transcripts, access, and source recordings. These differences matter more than a single total-hours figure. This survey focuses on Singapore speech and identifies nearby regional collections. The [machine-readable inventory](data/dataset-inventory.csv) provides a source link and access note for each of 34 screened entries; related subsets are listed separately for clarity.
 
+[Choose a dataset](#choose-by-task-and-evidence) · [Dataset map](#dataset-map) · [Examples](#what-the-data-looks-like) · [Shared sources](#shared-sources-and-subsets) · [Singapore datasets](#singapore-datasets-with-usable-asr-references) · [MNSC parts](#all-six-mnsc-asr-tests) · [Regional collections](#regional-and-code-switching-collections)
+
+## Choose by task and evidence
+
+“Reliable” has several meanings here. **Reference quality** describes who produced the transcript; it does not mean every word has been independently checked. **Coverage** asks whether the speakers and setting match your use case. **Access** asks whether the audio and its terms can be used as intended. **Independence** asks whether two reported results come from different original recordings. None of these is a single numerical quality score.
+
+| Need | Best starting point | Confidence in published references | Constraint that matters most |
+| --- | --- | --- | --- |
+| Conversational Singapore English | [AppTek en-SG](#singapore-datasets-with-usable-asr-references) | Professional manual, verbatim annotation | Only ten speakers in role-played service calls; paired channels share calls. |
+| Colloquial Singlish | [MNSC Part 3](#all-six-mnsc-asr-tests) | Published pre-annotated or human-edited references | Speaker labels and markup require a stated scoring convention; NSC derivatives are related. |
+| Local names, food, places, brands | [MNSC Part 2](#all-six-mnsc-asr-tests) | Published references for prompted speech | Tests named entities in read prompts, not recognition in conversation. |
+| Code-switched Singapore conversation | [MNSC Part 4](#all-six-mnsc-asr-tests) | Published references for mixed-language dialogue | Language mix and mixed-script scoring must be handled explicitly. |
+| Singapore-accented web video | [GigaSpeechBench SGP-EN](#singapore-datasets-with-usable-asr-references) | Professional transcription and publisher quality checks | Audio-use terms are unclear; accent metadata does not prove speaker nationality. |
+| Read Singapore-accented English | [Common Voice](#singapore-datasets-with-usable-asr-references) | Community-validated read-speech references | Test-split count and speaker balance depend on the exact release. |
+
+AppTek offers the clearest combination of public test files, stated dataset licence, and manual transcripts for a conversational English study. MNSC Part 3 is more directly about spontaneous local speech. Use both if the question spans service calls and colloquial conversation; they represent different settings. GigaSpeechBench adds a different recording source, subject to resolving its audio terms. Do not treat SASRBench and MNSC Part 3 as independent confirmations: both derive from NSC Part 3. A claimed “unseen” test also needs evidence about each model's training data; different dataset names alone cannot establish that.
+
+**Not ready as a straightforward WER reference:** YCSEP's released transcripts are automated; MERLIon CCS primarily documents language identification and diarization; NAS oral-history search text can be machine-generated; ICE-SIN and several historical corpora lack a clearly accessible, aligned ASR test. They remain useful for discovery or qualitative study. Licence uncertainty and transcript uncertainty are separate problems.
+
 ## Dataset map
 
 Start with the speech setting you want to understand. These groups describe the main use of each source; a dataset may contain more than one style.
 
 ```mermaid
-flowchart TD
-    A[Speech recognition datasets] --> B[Read speech and local names]
-    A --> C[Conversation]
-    A --> D[Code-switching]
-    A --> E[Multiple languages and styles]
-    B --> B1["MNSC Parts 1–2 · Common Voice<br/>SG Streets · IMDA2RareWord"]
-    C --> C1["Spontaneous local speech<br/>MNSC Part 3 · SASRBench"]
-    C --> C2["Role-played service calls<br/>AppTek en-SG"]
-    C --> C3["Web video and podcasts<br/>GigaSpeechBench · YCSEP"]
-    D --> D1["Singapore and Malaysia<br/>MNSC Part 4 · SEAME"]
-    D --> D2["Hong Kong and mainland China<br/>ASCEND · CS-Dialogue"]
-    E --> E1["Regional collections<br/>SEA-SpeechBench · FLEURS"]
-    E --> E2["Styles and scenarios<br/>MNSC Parts 5–6 · ESD"]
+flowchart LR
+    B[Read speech and names] --> B1["MNSC Parts 1–2 · Common Voice<br/>SG Streets · IMDA2RareWord"]
+    C[Conversation] --> C1["Spontaneous: MNSC Part 3 · SASRBench<br/>Role-play: AppTek en-SG<br/>Web speech: GigaSpeechBench · YCSEP"]
+    D[Code-switching] --> D1["Singapore / Malaysia: MNSC Part 4 · SEAME<br/>Hong Kong / mainland China: ASCEND · CS-Dialogue"]
+    E[Languages and styles] --> E1["Regional: SEA-SpeechBench · FLEURS<br/>Styles / scenarios: MNSC Parts 5–6 · ESD"]
 ```
 
 The map describes content, not transcript reliability. For example, YCSEP contains natural speech but its automatic transcripts are unsuitable as an unchecked WER reference.
 
 ## What the data looks like
 
-These are short, verbatim excerpts from released reference text, selected to illustrate format and speech style. They are not model predictions or a representative quality sample. Brackets, capitalization, and spelling are preserved; each excerpt may be only part of a recording. The source viewers provide the surrounding records and, where supported, audio playback.
+Short excerpts below preserve the published spelling and annotation. They illustrate reference formats, not model predictions or overall transcript quality. Follow the source links for context and available audio.
 
 | Dataset and example | Reference excerpt | What to notice |
 | --- | --- | --- |
 | [MNSC Part 1, public viewer](https://huggingface.co/datasets/MERaLiON/Multitask-National-Speech-Corpus-v1/viewer/ASR-PART1-Test/train) | “we watched the drama unfold before our eyes” | A clean read sentence. Local accent is an audio property and cannot be judged from these words alone. |
 | [SASRBench-v1, first displayed test record](https://huggingface.co/datasets/mjwong/SASRBench-v1/viewer/default/test) | “I don't know [eh] I going to Korea [ah]” | Local particles and colloquial grammar are retained. Bracket handling affects scoring. |
-| [AppTek en-SG, `en_SG_Agriculture_1586768_channel1.wav`](https://huggingface.co/datasets/apptek-com/apptek_callcenter_dialogues/blob/b98967d9946f7f59f58d08624a2a00fe98fe0219/test/en-SG/metadata.jsonl) | “Okay lah we shared that with farmers people.” | A particle appears in a service-call transcript. Removing it changes the reference being evaluated. |
-| [ASCEND, training record `00000`](https://huggingface.co/datasets/CAiRE/ASCEND/viewer/default/train) | “我刚刚开始record” | Mandarin characters and an English word occur together. This Hong Kong example illustrates code-switching, not Singapore speech. |
+| [AppTek en-SG, agriculture call](https://huggingface.co/datasets/apptek-com/apptek_callcenter_dialogues/blob/b98967d9946f7f59f58d08624a2a00fe98fe0219/test/en-SG/metadata.jsonl) | “Okay lah we shared that with farmers people.” | A particle appears in a service-call transcript. Removing it changes the reference being evaluated. |
+| [ASCEND, training record `00000`](https://huggingface.co/datasets/CAiRE/ASCEND/viewer/default/train) | “我刚刚开始record” | Mandarin and English appear in one phrase: approximately “I just started recording.” This is a Hong Kong training example. |
 
-Excerpts remain attributed to their dataset publishers. AppTek and ASCEND state CC BY-SA 4.0; MNSC's paper cites inherited Singapore Open Data Licence terms, while SASRBench carries an MIT badge alongside its NSC provenance. Dataset-specific terms are discussed below. The ASCEND example is explicitly from training; a readable example is not necessarily an evaluation item.
+AppTek record: `en_SG_Agriculture_1586768_channel1.wav`. Excerpts are attributed to the linked publishers. AppTek and ASCEND state CC BY-SA 4.0; MNSC cites inherited Singapore Open Data Licence terms; SASRBench carries an MIT badge alongside its NSC provenance.
 
 ## Shared sources and subsets
 
@@ -58,23 +69,6 @@ flowchart LR
 ```
 
 This is a selected relationship map, not the complete source list for either aggregate. Adding the hours of parent and derived releases would double-count material. AppTek and GigaSpeechBench have separately described collection processes; that alone does not establish exclusion from a particular model's training data.
-
-## Choose by task and evidence
-
-“Reliable” has several meanings here. **Reference quality** describes who produced the transcript; it does not mean every word has been independently checked. **Coverage** asks whether the speakers and setting match your use case. **Access** asks whether the audio and its terms can be used as intended. **Independence** asks whether two reported results come from different original recordings. None of these is a single numerical quality score.
-
-| Need | Best starting point | Confidence in published references | Constraint that matters most |
-| --- | --- | --- | --- |
-| Conversational Singapore English | [AppTek en-SG](#singapore-datasets-with-usable-asr-references) | Professional manual, verbatim annotation | Only ten speakers in role-played service calls; paired channels share calls. |
-| Colloquial Singlish | [MNSC Part 3](#all-six-mnsc-asr-tests) | Published pre-annotated or human-edited references | Speaker labels and markup require a stated scoring convention; NSC derivatives are related. |
-| Local names, food, places, brands | [MNSC Part 2](#all-six-mnsc-asr-tests) | Published references for prompted speech | Tests named entities in read prompts, not recognition in conversation. |
-| Code-switched Singapore conversation | [MNSC Part 4](#all-six-mnsc-asr-tests) | Published references for mixed-language dialogue | Language mix and mixed-script scoring must be handled explicitly. |
-| Singapore-accented web video | [GigaSpeechBench SGP-EN](#singapore-datasets-with-usable-asr-references) | Professional transcription and publisher quality checks | Audio-use terms are unclear; accent metadata does not prove speaker nationality. |
-| Read Singapore-accented English | [Common Voice](#singapore-datasets-with-usable-asr-references) | Community-validated read-speech references | Test-split count and speaker balance depend on the exact release. |
-
-AppTek offers the clearest combination of public test files, stated dataset licence, and manual transcripts for a conversational English study. MNSC Part 3 is more directly about spontaneous local speech. Use both if the question spans service calls and colloquial conversation; they represent different settings. GigaSpeechBench adds a different recording source, subject to resolving its audio terms. Do not treat SASRBench and MNSC Part 3 as independent confirmations: both derive from NSC Part 3. A claimed “unseen” test also needs evidence about each model's training data; different dataset names alone cannot establish that.
-
-**Not ready as a straightforward WER reference:** YCSEP's released transcripts are automated; MERLIon CCS primarily documents language identification and diarization; NAS oral-history search text can be machine-generated; ICE-SIN and several historical corpora lack a clearly accessible, aligned ASR test. They remain useful for discovery or qualitative study. Licence uncertainty and transcript uncertainty are separate problems.
 
 ## Singapore datasets with usable ASR references
 
@@ -125,7 +119,7 @@ MNSC also contains spoken question answering, dialogue summarization, and parali
 | [Revolab Malaysian public split](https://huggingface.co/datasets/Revolab/ASR-Benchmark-Public) | 820 Malay/English clips, about 2.2 h, with human-verified references. | Includes 52 TTS clips, singing, role-played telephony, 153 FLEURS clips, 141 Common Voice clips, and TUFS Malay material. Access conditions apply; CC BY 4.0 covers annotations while source audio rights vary. |
 | [FLEURS](https://huggingface.co/datasets/google/fleurs) | Multilingual read speech with named train, development, and test splits. | Useful language coverage; read speech is a different setting from conversation. CC BY 4.0 upstream. |
 
-The SEA-SpeechBench [source list](https://huggingface.co/datasets/MERaLiON/sea_audiobench_datasets_ASR#source-data) also names Bloom-Speech, MIG, Bud500, VietMed, Common Voice 21, ESD, MalCSC, SMalDuSC, OpenSLR, SFDuSC, LOTUS, and Thai Elderly Speech. These source families are nested in the aggregate. [ESD's creator](https://github.com/HLTSingapore/Emotional-Speech-Data) requires a research-use licence form despite an MIT repository badge. [SEACrowd](https://github.com/SEACrowd/seacrowd-datahub) offers further dataset discovery; each loaded corpus retains its own terms.
+The SEA-SpeechBench [source list](https://huggingface.co/datasets/MERaLiON/sea_audiobench_datasets_ASR#source-data) also names Bloom-Speech, MIG, Bud500, VietMed, Common Voice 21, ESD, MalCSC, SMalDuSC, OpenSLR, SFDuSC, LOTUS, and Thai Elderly Speech. These source families are nested in the aggregate. [SEACrowd](https://github.com/SEACrowd/seacrowd-datahub) offers further dataset discovery; each loaded corpus retains its own terms.
 
 ## Other related releases
 
