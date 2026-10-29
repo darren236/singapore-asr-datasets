@@ -46,21 +46,7 @@ AppTek record: `en_SG_Agriculture_1586768_channel1.wav`. Excerpts are attributed
 
 Several releases reuse source material. Arrows below mean “supplies material to,” not “every test recording overlaps.” Exact overlap between MNSC Part 3 and SASRBench is not established.
 
-```mermaid
-flowchart LR
-    NSC[IMDA National Speech Corpus] --> M[MNSC Parts 1–6]
-    NSC --> P3[NSC Part 3]
-    P3 --> S[SASRBench-v1]
-    NSC --> R[Reprocessed Singapore NSC]
-    CV[Common Voice] --> ACC[MCV_ACCENT Singapore tests]
-    CV --> SEA[SEA-SpeechBench]
-    F[FLEURS] --> SEA
-    SG[SG Streets] --> SEA
-    E[ESD] --> SEA
-    CV --> REV[Revolab public split]
-    F --> REV
-    TUFS[TUFS Malay] --> REV
-```
+![Selected source families feeding derived ASR datasets](assets/source-reuse.svg)
 
 This is a selected relationship map, not the complete source list for either aggregate. Adding the hours of parent and derived releases would double-count material. AppTek and GigaSpeechBench have separately described collection processes; that alone does not establish exclusion from a particular model's training data.
 
@@ -128,3 +114,4 @@ The SEA-SpeechBench [source list](https://huggingface.co/datasets/MERaLiON/sea_a
 ## Reading the counts
 
 A corpus total, a named evaluation configuration, and a derived subset answer different questions. AppTek's 8.1 hours count annotated speech rather than both channels' playback time. GigaSpeechBench's raw segment hours differ from a filtered scored set. SEAME's 192 and ASCEND's 10.62 hours describe full corpora. Common Voice and SEA-SpeechBench contain nested subsets. Licensing and transcript quality are described from publisher sources unless stated otherwise; the table does not certify every audio file or resolve recording-level overlap.
+
