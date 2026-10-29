@@ -2,6 +2,63 @@
 
 Speech recognition datasets differ in setting, speakers, transcripts, access, and source recordings. These differences matter more than a single total-hours figure. This survey focuses on Singapore speech and identifies nearby regional collections. The [machine-readable inventory](data/dataset-inventory.csv) provides a source link and access note for each of 34 screened entries; related subsets are listed separately for clarity.
 
+## Dataset map
+
+Start with the speech setting you want to understand. These groups describe the main use of each source; a dataset may contain more than one style.
+
+```mermaid
+flowchart TD
+    A[Speech recognition datasets] --> B[Read speech and local names]
+    A --> C[Conversation]
+    A --> D[Code-switching]
+    A --> E[Multiple languages and styles]
+    B --> B1["MNSC Parts 1–2 · Common Voice<br/>SG Streets · IMDA2RareWord"]
+    C --> C1["Spontaneous local speech<br/>MNSC Part 3 · SASRBench"]
+    C --> C2["Role-played service calls<br/>AppTek en-SG"]
+    C --> C3["Web video and podcasts<br/>GigaSpeechBench · YCSEP"]
+    D --> D1["Singapore and Malaysia<br/>MNSC Part 4 · SEAME"]
+    D --> D2["Hong Kong and mainland China<br/>ASCEND · CS-Dialogue"]
+    E --> E1["Regional collections<br/>SEA-SpeechBench · FLEURS"]
+    E --> E2["Styles and scenarios<br/>MNSC Parts 5–6 · ESD"]
+```
+
+The map describes content, not transcript reliability. For example, YCSEP contains natural speech but its automatic transcripts are unsuitable as an unchecked WER reference.
+
+## What the data looks like
+
+These are short, verbatim excerpts from released reference text, selected to illustrate format and speech style. They are not model predictions or a representative quality sample. Brackets, capitalization, and spelling are preserved; each excerpt may be only part of a recording. The source viewers provide the surrounding records and, where supported, audio playback.
+
+| Dataset and example | Reference excerpt | What to notice |
+| --- | --- | --- |
+| [MNSC Part 1, public viewer](https://huggingface.co/datasets/MERaLiON/Multitask-National-Speech-Corpus-v1/viewer/ASR-PART1-Test/train) | “we watched the drama unfold before our eyes” | A clean read sentence. Local accent is an audio property and cannot be judged from these words alone. |
+| [SASRBench-v1, first displayed test record](https://huggingface.co/datasets/mjwong/SASRBench-v1/viewer/default/test) | “I don't know [eh] I going to Korea [ah]” | Local particles and colloquial grammar are retained. Bracket handling affects scoring. |
+| [AppTek en-SG, `en_SG_Agriculture_1586768_channel1.wav`](https://huggingface.co/datasets/apptek-com/apptek_callcenter_dialogues/blob/b98967d9946f7f59f58d08624a2a00fe98fe0219/test/en-SG/metadata.jsonl) | “Okay lah we shared that with farmers people.” | A particle appears in a service-call transcript. Removing it changes the reference being evaluated. |
+| [ASCEND, training record `00000`](https://huggingface.co/datasets/CAiRE/ASCEND/viewer/default/train) | “我刚刚开始record” | Mandarin characters and an English word occur together. This Hong Kong example illustrates code-switching, not Singapore speech. |
+
+Excerpts remain attributed to their dataset publishers. AppTek and ASCEND state CC BY-SA 4.0; MNSC's paper cites inherited Singapore Open Data Licence terms, while SASRBench carries an MIT badge alongside its NSC provenance. Dataset-specific terms are discussed below. The ASCEND example is explicitly from training; a readable example is not necessarily an evaluation item.
+
+## Shared sources and subsets
+
+Several releases reuse source material. Arrows below mean “supplies material to,” not “every test recording overlaps.” Exact overlap between MNSC Part 3 and SASRBench is not established.
+
+```mermaid
+flowchart LR
+    NSC[IMDA National Speech Corpus] --> M[MNSC Parts 1–6]
+    NSC --> P3[NSC Part 3]
+    P3 --> S[SASRBench-v1]
+    NSC --> R[Reprocessed Singapore NSC]
+    CV[Common Voice] --> ACC[MCV_ACCENT Singapore tests]
+    CV --> SEA[SEA-SpeechBench]
+    F[FLEURS] --> SEA
+    SG[SG Streets] --> SEA
+    E[ESD] --> SEA
+    CV --> REV[Revolab public split]
+    F --> REV
+    TUFS[TUFS Malay] --> REV
+```
+
+This is a selected relationship map, not the complete source list for either aggregate. Adding the hours of parent and derived releases would double-count material. AppTek and GigaSpeechBench have separately described collection processes; that alone does not establish exclusion from a particular model's training data.
+
 ## Choose by task and evidence
 
 “Reliable” has several meanings here. **Reference quality** describes who produced the transcript; it does not mean every word has been independently checked. **Coverage** asks whether the speakers and setting match your use case. **Access** asks whether the audio and its terms can be used as intended. **Independence** asks whether two reported results come from different original recordings. None of these is a single numerical quality score.
