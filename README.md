@@ -114,4 +114,3 @@ The SEA-SpeechBench [source list](https://huggingface.co/datasets/MERaLiON/sea_a
 ## Reading the counts
 
 A corpus total, a named evaluation configuration, and a derived subset answer different questions. AppTek's 8.1 hours count annotated speech rather than both channels' playback time. GigaSpeechBench's raw segment hours differ from a filtered scored set. SEAME's 192 and ASCEND's 10.62 hours describe full corpora. Common Voice and SEA-SpeechBench contain nested subsets. Licensing and transcript quality are described from publisher sources unless stated otherwise; the table does not certify every audio file or resolve recording-level overlap.
-
