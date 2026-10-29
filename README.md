@@ -42,6 +42,46 @@ These published excerpts show reference formats, not model predictions or overal
 
 AppTek excerpt: `en_SG_Agriculture_1586768_channel1.wav`. Terms differ: AppTek and ASCEND state CC BY-SA 4.0; MNSC inherits Singapore Open Data Licence terms; SASRBench's MIT badge accompanies NSC-derived material.
 
+<details>
+<summary>Examples and availability for the other 30 surveyed entries</summary>
+
+Short quotations below link to the published record or manifest. “No excerpt verified” means this survey could not confirm a public, dataset-specific transcript sample; it does not mean the dataset has no transcripts. Derived collections may repeat their source recordings.
+
+| Dataset | Transcript excerpt or availability |
+| --- | --- |
+| [GigaSpeechBench SGP-EN](https://huggingface.co/datasets/speechcolab/GigaSpeechBench/blob/main/CH-EN-Dialects/data/SGP-EN/metadata.json) | “# Eh, you police or D J?” |
+| [MNSC Part 2](https://huggingface.co/datasets/MERaLiON/Multitask-National-Speech-Corpus-v1/viewer/ASR-PART2-Test/train) | “Lengkong Satu from here” |
+| [MNSC Part 3](https://huggingface.co/datasets/MERaLiON/Multitask-National-Speech-Corpus-v1/viewer/ASR-PART3-Test/train) | “no no seats [ah]” |
+| [MNSC Part 4](https://huggingface.co/datasets/MERaLiON/Multitask-National-Speech-Corpus-v1/viewer/ASR-PART4-Test/train) | “全部都不用 take #liao#” |
+| [MNSC Part 5](https://huggingface.co/datasets/MERaLiON/Multitask-National-Speech-Corpus-v1/viewer/ASR-PART5-Test/train) | “it could be regretful” |
+| [MNSC Part 6](https://huggingface.co/datasets/MERaLiON/Multitask-National-Speech-Corpus-v1/viewer/ASR-PART6-Test/train) | “normal nine to five jobs” |
+| [SG Streets subset](https://huggingface.co/datasets/MERaLiON/sea_audiobench_datasets_ASR/viewer/asr_sg_streets_utterance_30/train) | “bedok is an estate within singapore's east region” |
+| [SEA-SpeechBench ASR](https://huggingface.co/datasets/MERaLiON/sea_audiobench_datasets_ASR/viewer/asr_sgpccsc_utterance_30/train) | “额like让，就以消费” (one SgpCCSC Mandarin subset) |
+| [SEAME](https://catalog.ldc.upenn.edu/desc/addenda/LDC2015S04.txt) | “english 的 算 现在” |
+| [CS-Dialogue](https://huggingface.co/datasets/BAAI/CS-Dialogue/blob/main/data/index/total_information/Information_Index.txt) | “嗯，我是 Luna” |
+| [NIECSSE](https://videoweb.nie.edu.sg/phonetic/niecsse/m3/m3-a-tr.htm) | “Um ... no, I didn't have any escape” |
+| [Lim Siew Hwee corpus](https://videoweb.nie.edu.sg/phonetic/lim-siew-hwee-corpus/iF13/if13-a-tr.html) | “very crowded ... mmm” |
+| [Singapore code-switch tests](https://www.isca-archive.org/interspeech_2025/nguyen25_interspeech.pdf) | By request; no test transcript excerpt verified. |
+| [Revolab Malaysian split](https://huggingface.co/datasets/Revolab/ASR-Benchmark-Public) | Access-gated; no public transcript excerpt verified. |
+| [AudioBench Singapore](https://github.com/AudioLLMs/AudioBench/blob/main/src/dataset.py) | Private references; no public transcript excerpt verified. |
+| [IMDA2RareWordDataset](https://github.com/cyaaronk/IMDA2RareWordDataset/blob/main/real_roads_testset/text) | “KECK SENG TOWER AND JUPITER ROAD” |
+| [Common Voice Singapore accent](https://github.com/csalt-research/accented-codebooks-asr/blob/main/data/dataset.tar.gz) | “Hello, Benjamin.” (published accent-test subset, not CV26) |
+| [MCV_ACCENT Singapore test](https://github.com/csalt-research/accented-codebooks-asr/blob/main/data/dataset.tar.gz) | “He devised a daring plan” |
+| [YCSEP podcasts](https://huggingface.co/datasets/stcoats/YCSEP_v1/viewer/default/train) | “We caught an American CIA agent” (automatic transcript) |
+| [EdAcc](https://groups.inf.ed.ac.uk/edacc/) | No short dataset-specific transcript excerpt verified here. |
+| [Reprocessed Singapore NSC](https://huggingface.co/datasets/recursal/reprocessed_singapore_national_speech_corpus) | No excerpt verified from this repackaging; see the NSC-derived MNSC samples above. |
+| [FLEURS](https://huggingface.co/datasets/MERaLiON/sea_audiobench_datasets_ASR/viewer/asr_fleurs_ms_30/train) | “sedimen ini adalah perlu” (Malay subset in SEA-SpeechBench) |
+| [MERLIon CCS](https://github.com/MERLIon-Challenge/merlion-ccs-2023) | Lexical ASR excerpt not verified in the public challenge material. |
+| [ICE-SIN](https://www.ice-corpora.uzh.ch/en/access.htm) | Aligned audio and a public ASR excerpt not verified. |
+| [GSSEC](https://www3.ntu.edu.sg/home/yytan/interspeech.pdf) | Public transcript excerpt not verified. |
+| [Singapore English CALL](https://www.researchgate.net/publication/228449974_The_development_of_a_Singapore_English_call_resource) | Public transcript excerpt not verified. |
+| [NESSI](https://uclouvain.be/en/research-institutes/ilc/cecl/nessi.html) | Singapore-specific public transcript excerpt not verified. |
+| [NAS oral history](https://www.nas.gov.sg/archivesonline/oral_history_interviews/) | Per-record text varies; no aligned ASR excerpt selected here. |
+| [Emotional Speech Dataset](https://huggingface.co/datasets/MERaLiON/sea_audiobench_datasets_ASR/viewer/asr_esd_en_30/train) | “Blackbird, and Jay.” (English subset in SEA-SpeechBench) |
+| [SEACrowd](https://github.com/SEACrowd/seacrowd-datahub) | Dataset hub, so there is no single representative utterance. |
+
+</details>
+
 ## Shared sources and subsets
 
 Branches show reused source material, not proven clip-level overlap.
