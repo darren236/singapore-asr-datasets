@@ -68,7 +68,7 @@ Short quotations below link to the published record or manifest. “No excerpt v
 | [Common Voice Singapore accent](https://github.com/csalt-research/accented-codebooks-asr/blob/main/data/dataset.tar.gz) | “Hello, Benjamin.” (published accent-test subset, not CV26) |
 | [MCV_ACCENT Singapore test](https://github.com/csalt-research/accented-codebooks-asr/blob/main/data/dataset.tar.gz) | “He devised a daring plan” |
 | [YCSEP podcasts](https://huggingface.co/datasets/stcoats/YCSEP_v1/viewer/default/train) | “We caught an American CIA agent” (automatic transcript) |
-| [EdAcc](https://groups.inf.ed.ac.uk/edacc/) | No short dataset-specific transcript excerpt verified here. |
+| [EdAcc](https://huggingface.co/datasets/edinburghcstr/edacc/viewer/default/validation) | “OKAY NOW FOR A REGULAR CONVERSATION” |
 | [Reprocessed Singapore NSC](https://huggingface.co/datasets/recursal/reprocessed_singapore_national_speech_corpus) | No excerpt verified from this repackaging; see the NSC-derived MNSC samples above. |
 | [FLEURS](https://huggingface.co/datasets/MERaLiON/sea_audiobench_datasets_ASR/viewer/asr_fleurs_ms_30/train) | “sedimen ini adalah perlu” (Malay subset in SEA-SpeechBench) |
 | [MERLIon CCS](https://github.com/MERLIon-Challenge/merlion-ccs-2023) | Lexical ASR excerpt not verified in the public challenge material. |
